@@ -24,9 +24,7 @@ public class UserController {
     @RequestMapping("/user/add")
     public @ResponseBody
     String addUser(@RequestParam(value = "name") String name) {
-        if (name == null || name.isEmpty()) {
-            return "no name";
-        }
+        if (name == null || name.isEmpty()) return "no name";
         User user = new User();
         user.setName(name);
         user.setGold(0);
